@@ -1,6 +1,7 @@
 from fastapi import FastAPI
+from app.api.main import api_router
 from app.core.config import settings
-from app.api.router import router
+
 
 app = FastAPI()
 
@@ -19,4 +20,4 @@ def read_root():
 def read_item(name: str):
     return {"name": f"Hello {name}"}
 
-app.include_router(router, prefix=settings.API_V1_STR)
+app.include_router(api_router, prefix=settings.API_V1_STR)
