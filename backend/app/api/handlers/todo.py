@@ -4,4 +4,4 @@ todo_router = APIRouter()
 
 @todo_router.get("/")
 def hello():
-    return "Todo API!"
+    return  {"Foo": "Bar"}
